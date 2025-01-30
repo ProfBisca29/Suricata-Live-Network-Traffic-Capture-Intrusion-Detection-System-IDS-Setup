@@ -18,7 +18,7 @@ TROUBLESHOOTING:
 So I came across a problem where the rules weren't working when setting up suricata itself with the adapter (eth0), make sure to update the rules, which you can do by sudo nano /etc/suricata/suricata.yaml, go to rule-files and update the rule settings there. This can be a big problem if you don't. 
 Once you do that, lets say you used nmap, you'll be able to see the live alert in the log file if the rules are set correctly. I also tried hping3 and it worked out. 
 
-I have attached two photos that highlight what the troubleshooting process would look like and what you ned to expect. 
+I have attached two photos that highlight what the troubleshooting process would look like and what you need to expect. Most of these commands can be tested out with and can be found within suricata documentation itself, you may not be able to set uit up first try but just troubleshoot and explore the commands given.
 
 
 
