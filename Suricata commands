@@ -1,0 +1,24 @@
+I used the commands below. I chose to use Suricata for this in particular so that I could create the rules and alerts solely from the Kali terminal. 
+
+sudo apt-get install suricata
+
+(But first, check the adapter of your virtual machine, you can run uname -r to see what adapter your vm is using) 
+
+sudo suricata -c /etc/suricata/suricata.yaml -i eth0
+
+sudo suricata-update (This command is vital to install all of the updated packages that come with Suricata)
+
+nmap -sS <target IP> (So I had a defender VM and an attacker VM, run nmap on the attacker and use the IP of the defender) (Also for the purposes of setting up suricata and testing it out in terminal I had, set up a bridged adapter for both VMs to be part of the same IP class.)
+
+tail -f /var/log/suricata/fast.log (This is how you view Suricata logs, I myself found this out through Suricata documentation and github itself) 
+
+sudo systemctl start suricata
+
+TROUBLESHOOTING:
+So I came across a problem where the rules weren't working when setting up suricata itself with the adapter (eth0), make sure to update the rules, which you can do by sudo nano /etc/suricata/suricata.yaml, go to rule-files and update the rule settings there. This can be a big problem if you don't. 
+Once you do that, lets say you used nmap, you'll be able to see the live alert in the log file if the rules are set correctly. I also tried hping3 and it worked out. 
+
+I have attached two photos that highlight what the troubleshooting process would look like and what you ned to expect. 
+
+
+
