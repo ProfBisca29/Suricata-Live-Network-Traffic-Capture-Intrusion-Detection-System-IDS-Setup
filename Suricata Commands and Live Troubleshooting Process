@@ -1,4 +1,4 @@
-I used the commands below. I chose to use Suricata for this in particular so that I could create the rules and alerts solely from the Kali terminal. 
+I used the commands below. I chose to use Suricata for this in particular so that I could create the rules and alerts solely from the Kali terminal. I used two kali vms in virtualbox. One defender and One attacker.
 
 sudo apt-get install suricata
 
